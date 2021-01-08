@@ -178,6 +178,18 @@ def player_numbers(value)
   return numbers
 end
 
+def player_stats(name)
+  stats = {}
+  game_hash.each do |team, game_stats|
+    game_stats[:players].each do |player|
+      if name == player[:player_name]
+        stats.merge!(player)
+      end
+    end
+  end
+  stats
+end 
+
 
 
 
